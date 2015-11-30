@@ -1,0 +1,87 @@
+<!-- Main section starts -->
+<section id='page-content' ng-controller="">
+  
+  <!-- Page title start -->
+  <div class='page-title'>
+      <h1>Audit Assign</h1>
+  </div>
+ <!-- Page title ends -->
+
+ <!-- Page content start -->
+  <div class="table-grid clearfix">
+
+    <!-- Page subheading start -->
+      <div class="project-search clearfix">
+          <div class="protitle clearfix">
+               <h2>Section Selection</h2>
+          </div>
+      </div>
+    <!-- Page subheading ends -->
+  
+  <!-- Projects list starts -->
+   <div class="data-table">
+       <div class="row">
+
+        <!-- Project Ng repeat starts -->
+        <div class="row check-input">
+ <div class="col-lg-4 clearfix ">
+     <div class="box-check pull-left"> 
+      <input type="checkbox" value="Sekhar">Audit
+        <input type="checkbox" class="box-small" id="pdp" ng-model="add.pdp" value="true" name="name"/>
+        <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label class="assign-label" for="pdp" ><div class="audit-input pull-left" ng-model="audit.pdp"> PDP</div></label>
+    </div><!-- /input-group -->
+ 
+  <div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="require" ng-model="add.requirement" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div> 
+     <label class="assign-label" for="require" ><div class="audit-input pull-left" ng-model="audit.requirement">Requirement</div></label>
+    </div><!-- /input-group -->
+ 
+ <div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="analysis" ng-model="add.analysis" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label class="assign-label" for="analysis" ><div class="audit-input pull-left" ng-model="audit.analysis"> Analysis</div></label>
+    </div><!-- /input-group -->
+ 
+   <div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="design" ng-model="add.design" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label  class="assign-label"for="design" ><div class="audit-input pull-left" ng-model="audit.design"> Design</div></label>
+    </div><!-- /input-group -->
+    <div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="testing" ng-model="add.testing" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label  class="assign-label"for="testing" ><div class="audit-input pull-left"> testing</div></label>
+    </div><!-- /input-group -->
+    <div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="integration" ng-model="add.integration" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label  class="assign-label"for="integration" ><div class="audit-input pull-left"> integration</div></label>
+    </div><!-- /input-group -->
+        <!-- Project Ng repeat ends -->
+          
+
+
+       </div>  
+   </div>
+    
+              
+   <!-- Project list ends  -->
+ </div>
+
+<!-- Page Content ends -->
+
+ </section>
+ <!-- Main Section ends -->

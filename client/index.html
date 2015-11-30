@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cidex | Login Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/Webfonts.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body ng-app="auditTool">
+    <!-- Wrapper starts -->
+      <div id="wrapper"ng-controller="loginController">
+        <div class="header">
+        </div>
+        <!-- Main content -->
+          <div class="login-page">
+
+            <!-- Logo starts -->
+              <div class="logo">
+                <img src="assets/images/logo.png" width=350px alt="logo_img" title="logo_img">
+              </div>
+            <!-- Logo ends -->
+            
+            <!-- Login form starts -->
+              <div class="login-field">
+                <h1>SIGN IN TO CONTINUE</h1>
+                <p class="error-message" ng-show="validation">Invalid email or password.</p>
+              
+                  <!-- Form Starts -->
+                    <form class="form-horizontal form" role="form" name="myForm">
+                      <label for="email">Email ID</label>
+                    
+                      <div class="form-group email_field clearfix">
+                        <div class="icon-field">
+                          <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user">
+                            </i>
+                          </span>
+                        </div>
+                        <div class="input-field">
+                          <input type="email" class="form-control inputsize" name="email" id="email" ng-model="user.email">
+                        </div>
+                      </div>
+                      <label for="password">Password</label>
+                      <div class="form-group clearfix">
+                        <div class="icon-field">
+                          <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock">
+                            </i>
+                          </span>
+                        </div>
+                        <div class="input-field">
+                          <input type="password" class="form-control inputsize" name="password" id="password" ng-model="user.password">
+                        </div>
+                      </div>
+                      <input type="submit" value="Login" class="btn btn-primary" ng-click="signin()">
+                    </form>
+                  <!-- Form ends -->
+              </div>
+            <!-- Login form ends -->
+          </div>
+        <!-- Main content ends -->
+      </div>
+    <!-- Wrapper ends -->
+  </body>
+    <script src="assets/js/lib/jquery/jquery.js"></script>
+    <script src="assets/js/lib/angular/angular.js"></script>
+    <script src="assets/js/lib/angular/angular-route.js"></script>
+    <script src="assets/js/lib/angular/angular-cookie.js"></script>
+    <script src="assets/js/lib/bootstrap/bootstrap.js"></script>
+    <script src="assets/js/lib/ngtable/ng-table.js"></script>
+    <script src="assets/js/lib/uirouter/ui-router.js"></script>
+    <script src="assets/js/lib/dirPagination.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/controllers/controller.login.js"></script>
+    <script src="assets/js/services/factory.login.js"></script>
+</html>

@@ -1,0 +1,139 @@
+   <section id='page-content' ng-controller="sectionController" >
+            <div class='page-title'>
+                <h1>Sections</h1>
+            </div>
+            <div class="table-grid clearfix">
+                <div class="project-search clearfix">
+                    <div class="protitle clearfix">
+                        <h2>Create</h2>
+                    </div>
+                    <div class="project-button pull-right">
+                        <button type="button" class="btn btn-primary pull-right" id="success" data-toggle="modal" data-target="#myModal">Add New Sections</button>
+                    </div>
+                </div>
+
+                <div class="data-table">
+                    <table class="table table-striped table-bordered " >
+                        <thead>
+                            <tr>
+                                <th>Section ID </th>
+                                <th>Section Name</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr dir-paginate="section in section_list |itemsPerPage:5">
+                               <td>{{$index+1}}</td>
+                                <td>{{section.section_name}}</td>
+                                <td>{{section.detail}}</td>
+                                <td> {{ section.created_date| date : 'yyyy-MM-dd'}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm edit modify" data-toggle="modal" data-target="#editSectionModal" ng-click=editSection(section._id)>Edit</button>
+                                    <button type="button" class="btn btn-sm delete modify" data-toggle="modal" data-target="#deleteSectionModal" ng-click="give(section._id)">Delete</button>
+                                </td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination Start -->
+                    <dir-pagination-controls
+                      max-size="5"
+                      direction-links="true"
+                      boundary-links="true" >
+                    </dir-pagination-controls>
+                   <!-- Pagination end -->
+                
+        </div>
+ 
+        <!-- Modal -->
+        <!-- pop-up -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content content-section">
+                    <div class="header-part">
+                        <div class="modal-header header-section">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">New Section</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body clear-fix body-section">
+                         
+                        <div class="textbox-sec">
+                        <p class="pull-left" > Section name</p>
+                        <input type="text" class="" id="textbox-id" required ng-model="addsection.section_name">
+                        </div>
+                        <div class="textbox-sec">
+                        <p class="pull-left" > Description</p>
+                        <input type="text" class="" id="textbox-feedback" required ng-model="addsection.description">
+                        </div>
+                        
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="create-sel" ng-click="addSection(addsection)">Create Section</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-sel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="editSectionModal" role="dialog">
+                <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content content-section">
+                    <div class="header-part">
+                        <div class="modal-header header-popup">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Edit Section</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body clear-fix body-section">
+                        <div class="textbox-sec">
+                        <p class="pull-left" > Section Name</p>
+                        <input type="text" class="" id="textbox-id" required ng-model="editsection.section_name">
+                        </div>
+                        <div class="textbox-sec">
+                        <p class="pull-left" > Description</p>
+                        <input type="text" class="" id="textbox-feedback" required ng-model="editsection.detail">
+                        </div>
+                        
+                </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="create-sel" ng-click="updatesection(editsection)">Update Project</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-sel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+             <!-- pop-up  for Delete Section-->
+        <div class="modal fade" id="deleteSectionModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="header-part">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Delete Section</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body clear-fix">
+                        <p class="pull-left">Do You really Want to Delete..!</p>
+                    </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-default" data-dismiss="modal" id="create-sel" ng-click="deleteSection(deleteId)">Yes</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-sel">No, Go Back</button> 
+                        </div>
+                    </div>
+            </div>
+        </div>
+    <!-- pop-up  for Delete Section ends-->   
+
+   </section>
+  

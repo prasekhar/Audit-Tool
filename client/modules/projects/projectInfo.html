@@ -1,0 +1,147 @@
+
+<!-- Main section starts -->
+    <section id='page-content' ng-controller="projectController">
+       <!-- Page title starts  -->
+            <div class='page-title'>
+                <h1>Project Information</h1>
+            </div>
+       <!-- Page title ends -->
+       <div class="table-grid clearfix projectinfosection">
+            <div class="infosections clearfix">
+                <div class="leftsections">
+
+                    <p><span>Project Name</span><label>: {{projectinfolist.projectname}}</label></p>
+                    <p><span>Customer/Account</span><label>: {{projectinfolist.customername}}</label></p>
+                    <p><span>POC(s) attended</span><label>: {{projectinfolist.project_lead}}</label></p>
+                    <p><span>Project Start Date</span><label>: {{projectinfolist.start_date}}</label></p>
+                    <p><span>Project Description</span><label>: </span>{{projectinfolist.project_desc}}</p>
+                </div>
+                <div class="rightsections">
+                    <p><span>Project ID</span><label>: {{projectinfolist.projectid}}</label></p>
+                    <p><span>Customer ID</span><label>:{{projectinfolist.customerid}} </label></p>
+                    <p><span>Project Type</span><label>: {{projectinfolist.project_type}}</label></p>
+                    <p><span>Technology stack</span><label>: {{projectinfolist.technologystack}} </label></p>
+                    <p><span>Project Delivery Methodology</span><label>: {{projectinfolist.projectDeliveryMethodology}}</label></p>
+                </div>
+            </div>
+            <div class="infobuttons">
+                 <button type="button" class="btn btn-info pull-right codereview" 
+                 ng-click="code_review()" data-toggle="modal" data-target="#myModal">Code Review</button>
+                <button type="button" class="btn btn-primary pull-right" ng-click="userrole()">Audit</button>
+                <button type="button" class="btn btn-danger pull-right editProject" ng-click="getProjectData(projectinfolist)" ui-sref="updateProject" >Edit Project</button>
+            </div>
+        </div>
+        <!-- Page data section starts -->
+            <div class="table-grid clearfix">
+                <!-- Sub heading starts -->
+                    <div class="project-search clearfix">
+                        <div class="infotitle">
+                            <h2>Resource Details</h2>
+                        </div>
+                        <div class="infodetails">
+                        <div class="entries pull-left">
+                            <label>Show</label>
+                            <input type="number"  min="1" max={{resourcelist.length}} step="1" ng-model="count"/>
+                            <label>entries</label>
+                        </div>
+                        <div class="search pull-right">
+                        <label>Search : </label><input type="search" class="infosearchbox" ng-model="search">
+                        </div>
+                        </div>
+                    </div>
+                <!-- Sub heading ends -->
+
+                <!-- Data grid starts -->
+                    <div class="data-table">
+                        <table class="table table-striped table-bordered " >
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>AssociateId</th>
+                                    <th>AssociateName</th>
+                                    <th>AllocationStartDate</th>
+                                    <th>AllocationEndDate</th>
+                                    <th>Grade</th>
+                                    <th>HCM</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr dir-paginate="resource in resourcelist|filter:search|itemsPerPage:count">
+                                    <td>{{$index+1}}</td>
+                                    <td>{{resource.AssociateID}}</td>
+                                    <td>{{resource.AssociateName}}</td>
+                                    <td>{{resource.AllocationStartDate}}</td>
+                                    <td>{{resource.AllocationEndDate}}</td>
+                                    <td>{{resource.Gradename}}</td>
+                                    <td>{{resource.HCM_ID}}</td>
+                                        
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                       
+                    </div>
+                <!-- Data grid ends -->
+
+                <!-- Pagination starts -->
+                   <!--  <div class="paging clearfix">
+                        <div class="show-entry">
+                            <p>Showing 1 to 10 of 20 entries</p>
+                        </div>
+                        <nav class="pagelink">
+                            <ul class="pagination">
+                                <li class="list-item">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="list-item" id="first">
+                                    <a href="#">1</a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="#">2</a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="#">3</a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div> -->
+                     <!-- Pagination Start -->
+                    <dir-pagination-controls
+                      max-size="5"
+                      direction-links="true"
+                      boundary-links="true" >
+                    </dir-pagination-controls>
+                   <!-- Pagination end -->
+                <!-- Pagination ends -->
+            </div>
+        <!-- Page section data ends -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+             <!-- Modal content-->
+             <div class="modal-content" id="modelContent1">
+              <div class="header-part">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">CODE REVIEW</h4>
+                </div>
+              </div>
+               <div class="modal-body clear-fix">
+                   <div class="add-user" ng-repeat="tech in status">
+
+                    <label>{{tech.technology}} : </label>
+                    <span>{{tech.percentage}}</span>
+                   </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+       
+    </section>
+<!-- Main section ends -->

@@ -1,0 +1,126 @@
+<!-- Main content starts -->
+<section id='page-content' ng-controller="technologyController">
+    <!-- Page title starts -->
+        <div class='page-title'>
+            <h1>Technologies</h1>
+        </div>
+    <!-- Page title ends -->
+
+    <!-- Page Main data container -->
+      <div class="table-grid clearfix">
+          <!-- Page sub heading -->
+              <div class="project-search clearfix">
+                   <div class="protitle clearfix">        
+                        <h2>Create</h2>
+                   </div> 
+                    <div class="project-button pull-right">
+                        <button type="button" class="btn btn-primary pull-right" id="success" data-toggle="modal" data-target="#addTechnology">Add New Technologies</button>
+                    </div>    
+             </div>
+          <!-- Page sub heading ends -->
+
+            <!-- Table div starts -->
+                <div class="data-table">
+                    <!-- Table starts -->
+                	 <table class="table table-striped table-bordered col-md-6" id="technology-table">
+                        <thead>
+                            <tr>
+                                <th class="col-md-3">Technology</th>
+                                <th class="col-md-3"> Action</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                        	  <tr dir-paginate="technology in technologyList |itemsPerPage:5">
+                                 <td>{{technology.name}}</td>
+                                 <td>
+                	                <button type="button" class="btn btn-sm edit modify" data-toggle="modal" data-target="#editModal" ng-click="getData(technology)">Edit</button>
+                	                <button type="button" class="btn btn-sm delete modify" data-toggle="modal" data-target="#deleteModal" ng-click="getData(technology)">Delete</button>
+                	            </td>
+                        	  </tr>
+                        </tbody>
+                     </table>
+                    <!-- Table ends -->
+                </div>	 
+            <!-- Table div ends -->
+            <!-- Pagination Start -->
+                    <dir-pagination-controls
+                      max-size="5"
+                      direction-links="true"
+                      boundary-links="true" >
+                    </dir-pagination-controls>
+                   <!-- Pagination end -->
+      </div>   
+    <!-- Page main data container ends  -->
+
+    <!-- pop-up  for New Technology-->
+        <div class="modal fade" id="addTechnology" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="header-part">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">New Technology</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body clear-fix">
+                        <p class="pull-left">Name</p>
+                        <input type="text" class="pull-left" id="textbox" ng-model="technology.name">
+                    </div>
+                    <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="create-sel" ng-click="saveTechnology(technology)">Create Technology</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-sel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- pop-up  for New Technology ends-->
+
+    <!-- pop-up  for Edit Technology-->
+        <div class="modal fade" id="editModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="header-part">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Edit Technology</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body clear-fix">
+                        <p class="pull-left">Name</p>
+                        <input type="text" class="pull-left" id="textbox" ng-model="technology.sname">
+                    </div>
+                    <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="create-sel" ng-click="updateTechnology(technology)">Update Technology</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-sel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- pop-up  for Edit Technology ends-->  
+
+    <!-- pop-up  for Delete Technology-->
+        <div class="modal fade" id="deleteModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="header-part">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Delete Technology</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body clear-fix">
+                        <p class="pull-left">Do You really Want to Delete..!</p>
+                    </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-default" data-dismiss="modal" id="create-sel" ng-click="deleteTechnology(technology)">Yes</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-sel">No, Go Back</button> 
+                        </div>
+                    </div>
+            </div>
+        </div>
+    <!-- pop-up  for Delete Technology ends-->      
+</section>
+<!-- Main content ends -->

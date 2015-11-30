@@ -1,0 +1,96 @@
+<div id="wrapper" ng-controller="auditController">
+  <section id='page-content'>
+        <div class='page-title'>
+            <h1>Audit assign</h1>
+        </div>
+        <div class="table-grid clearfix">
+            <div class="project-search clearfix">
+                <div class="protitle clearfix">
+                    <h2>Create</h2>
+                </div>
+            </div>
+             <div class="mainContent clearfix">
+                <p>Select the selection from below that are required for the present audit</p>
+                <!-- <div check-directive="check_list(a)"></div> -->
+
+
+<div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="analysis" ng-model="add.section.analysis" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label class="assign-label" for="analysis" ><div class="audit-input pull-left" > Analysis</div></label>
+    </div><!-- /input-group -->
+ 
+   <div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="design" ng-model="add.section.design" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label  class="assign-label"for="design" ><div class="audit-input pull-left" > Design</div></label>
+    </div><!-- /input-group -->
+    <div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="testing" ng-model="add.section.testing" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label  class="assign-label"for="testing" ><div class="audit-input pull-left"> testing</div></label>
+    </div><!-- /input-group -->
+    <div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="integration" ng-model="add.section.integration" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label  class="assign-label"for="integration" ><div class="audit-input pull-left"> integration</div></label>
+    </div><!-- /input-group -->
+
+    <div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="integration_support" ng-model="add.section.pdp" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label  class="assign-label"for="integration_support" ><div class="audit-input pull-left">PDP </div></label>
+    </div><!-- /input-group -->
+
+    <div class="col-lg-4 clearfix ">
+      <div class="box-check pull-left">
+        <input type="checkbox"class="box-small" id="codeunit" ng-model="add.section.codeunit" value="true" name="name"/>
+         <div class="checkbox-small"> <span class="glyphicon glyphicon-ok"></span></div>
+      </div>
+     <label  class="assign-label"for="codeunit" ><div class="audit-input pull-left"> unit testing</div></label>
+    </div><!-- /input-group -->
+ 
+ 
+</div>
+
+                <p class="sel-audit">Select the admin/auditor for auditing the present project</p>
+                <div class="pull-left">
+                    <span class="pull-left drop-head">Admin</span>
+                     <select data-placeholder="Select section" class="span edit-section pull-left" style="width:266px;" ng-model="add.admin">
+                                        <option >ankita</option>
+                                        <option >ankita</option>
+                                        <option >ankita</option>
+                                    </select>  
+                 
+                </div>
+                <div class="pull-left assign-drop">
+                    <span class="pull-left drop-head "  >Auditor</span>
+                   
+                    <select data-placeholder="Select section" class="span edit-section  pull-left" style="width:266px;" ng-model="add.auditor">
+                                        <option >sahithi</option>
+                                        <option >sahithi</option>
+                                        <option >sahithi</option>
+                                    </select>  
+             </div>
+             
+             </div>
+            <button type="button" class="btn btn-primary pull-right btn-sm" id="success" data-toggle="modal" data-target="#myModal" ng-click="addAudit(add)">Apply selected options to audit</button>
+         </div>
+    </section>
+ </div>          
+                     
+                                       
+                                      
+                                       
+                                       
+                            

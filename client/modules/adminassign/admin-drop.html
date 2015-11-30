@@ -1,0 +1,11 @@
+ <div class="clearfix">
+      <div class="input-group-btn pull-left">
+        <button type="button" class="btn btn-default dropdown-toggle arrow pull-left" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+         <li ng-repeat="list in templateList" ng-click="setValue(list)">{{list.name}}</li>
+        </ul>
+      </div>
+        <div class="audit-input pull-left drop-detail" id="sel-one">
+        </div>
+
+    </div>

@@ -1,0 +1,106 @@
+		  <!-- <link rel="stylesheet" href="../../assets/css/audit.css" />
+       <link rel="stylesheet" href="../../assets/css/switch.css" />-->
+        <section id='page-content' ng-controller="auditphaseController">
+        <div class = "page-title">
+          <h1>Audit Phase</h1>
+        </div>
+        <div class="table-grid clearfix">
+          <div class="project-search clearfix">
+            <div class = "main_content clearfix" id="mainContent">
+              <div id = "leftContent" class = "pull-left">
+                 <nav class = "audit_phase_nav" id="audit_nav">
+                  <ul>
+                    <li ng-repeat = "tab in tabs"
+                        ng-class = "{active : isActiveTab(tab.url)}"
+                        ng-click = "onClickTab(tab)">{{tab.title}}</li>
+                  </ul>
+                 </nav>
+             </div>
+             <div id = "rightContent" class = "pull-right">
+                <div class = "right_content_header clearfix">
+                  <div class = "rch_leftheader pull-left">
+                    <p>1.Kick-off/Interview with Stack holders & Verticals</p>
+                  </div>
+                  <div class = "rch_rightLogo pull-right">
+                    <!--<span class = "glyphicon glyphicon-question-sign" id = "quest_symbol"></span>-->
+                    <div class = "question_mark">
+                      <span class = "glyphicon glyphicon-question-sign" id = "quest_symbol"></span>
+                    </div>
+                    <div class = "switchbut_dir">
+                      <div class="switch" id="auditSwitch">
+                        <input type="checkbox" name="switch" class="switch-checkbox" id="switch-checkbox"/>
+                        <label class="switch-label" for="switch-checkbox">
+                            <span class="switch-inner"></span>
+                            <span class="switch-circle"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class = "clear"></div>
+                  </div>
+                </div>
+                <div class = "main_rightcontent" id="tabsdivision">
+                  <div ng-include = "currentTab"></div>
+                </div>
+             </div>
+            </div>
+             <script type="text/ng-template" id="one.tpl.html">
+                <form class="form-horizontal" id = "auditPhaseform">
+                    <div class="form-group" id = "form_align">
+                      <label for="responsibility" class="col-sm-4 control-label label_name">Email</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control fields" id="responsibility">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="Name" class="col-sm-4 control-label label_name">Name</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control fields" id="Name">
+                      </div>
+                    </div>
+                    <div class = "form-group">
+                      <label for = "status" class = "col-sm-4 control-label label_name" id = "labels">Status</label>
+                       <select chosen ng-model="countries.c" ng-options="c.name for c in sectionslist" data-placeholder="select" class="span chzn-select col-sm-8 status_selectb" id ="status" style = "width:328px;height:35px;">
+                       </select>
+                    </div>
+                    <div class = "form-group" id ="attachstyle" >
+                      <label for="attachment" class="col-sm-4 control-label label_name" id = "labela">attachments</label>
+                      
+                      <button class = "col-sm-8 browse_file" id = "attachment">Browse to add files</button>
+                      <input type="file" id="my_file"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="comments" class="col-sm-4 control-label label_name" id = "labelc">Comments</label>
+                      <div class="col-sm-8">
+                        <textarea class="form-control fields" rows="3"></textarea>
+                      </div>
+                    </div>
+                  </form>
+             </script>
+             <script type="text/ng-template" id="two.tpl.html">
+              <div>
+                requirement gathering page
+              </div>
+             </script>
+             <script type="text/ng-template" id="three.tpl.html">
+              <div>
+                analysis page
+              </div>
+             </script>
+             <script type="text/ng-template" id = "four.tpl.html">
+                <div>
+                  design page
+                </div>
+             </script>
+             <script type="text/ng-template" id = "five.tpl.html">
+                <div>
+                  code and unit testing page
+                </div>
+             </script>
+             <script type="text/ng-template" id = "six.tpl.html">
+                <div>
+                  integration support page
+                </div>
+             </script>
+            </div>
+           </div> 
+		  </section>

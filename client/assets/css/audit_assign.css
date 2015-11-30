@@ -1,0 +1,102 @@
+
+/*audit-assign*/
+
+.mainContent{
+	    background-color: #ececec;
+  margin: 0 auto;
+  width: 920px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  padding: 15px;
+}
+.audit-input{
+	border-radius: 0;
+	background-color: white;
+	cursor:pointer;
+	border:1px solid #ccc;
+	  height: 34px;
+	    padding-left: 10px;
+  padding-top: 2px;
+    width: 158px;
+    font-weight: normal;
+    font-family: "UniversLTStd-Light";
+    color: #555;
+      border: 0;
+  box-shadow: 1px 2px 0px #dbdbdb;
+}
+
+
+.check-input{
+	margin: 25px 0 40px 0;
+}
+.drop-input{
+	width:265px;
+	margin-left: 24px;
+}
+.sel-audit{
+	margin-bottom: 25px;
+}
+.assign-label{
+  width: 36px;
+}
+.arrow{
+	height: 36px;
+  background: -webkit-linear-gradient(#FFF 20%,#ededed 80%);
+  background: -o-linear-gradient(#FFF 20%,#ededed 80%);
+  background: -moz-linear-gradient(#FFF 20%,#ededed 80%);
+  background: linear-gradient(#FFF 20%,#ededed 80%);
+  border-radius: 0px;
+    margin-left: 195px;
+margin-top: -1px;
+}
+.drop-head{
+margin-left: 20%;
+
+}
+.box-check{
+	border-radius: 0px;
+  padding-right: 9px;
+padding-top: 9px;
+padding-left: 9px;
+  height: 34px;
+    background-color: #f6f7f9;
+  border: 0;
+  box-shadow: 2px 2px 0px #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+}
+.box-small{
+  border-radius: 0px;
+  display: none;
+}
+.checkbox-small{
+  background-color: white;
+  width: 16px;
+  height: 16px;
+  padding-left: 2px;
+  padding-top: 1px;
+}
+.glyphicon-ok{
+  color: white;
+}
+.tick{
+  color:  #8dc859;
+  font-size: 11px;
+  top: -5px;
+  left: -5px;
+}
+
+.drop-detail{
+  margin-left: 24px;
+  width: 166px;
+  text-align: center;
+    border: 1px solid #ccc;
+  border-right: none;
+}
+.dropdown-menu-right {
+  right: 0;
+  left: 71px;
+}
+
+.class1{
+  background-color: #8dc859 ;
+}

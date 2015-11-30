@@ -1,0 +1,1 @@
+{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "name" : "_id_", "ns" : "audit.projects" }, { "v" : 1, "unique" : true, "key" : { "projectid" : 1 }, "name" : "projectid_1", "ns" : "audit.projects", "background" : true, "safe" : null } ] }

@@ -1,0 +1,88 @@
+.switch {
+    position: relative;
+    width: 95px;
+    height:23px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+}
+.switch-checkbox {
+    display: none;
+}
+.switch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #dadcdb;
+    border-radius: 25px;
+}
+.switch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s;
+    -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s;
+    transition: margin 0.3s ease-in 0s;
+}
+.switch-inner:before, .switch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 23px;
+    padding: 0;
+    line-height: 23px;
+    font-size: 16px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.switch-inner:after {
+    content: "Enable";
+    padding-left: 13px;
+   background: -webkit-linear-gradient(#448426,#5cb22d,#5dbe30,#64c132); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#448426,#5cb22d,#5dbe30,#64c132); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#448426,#5cb22d,#5dbe30,#64c132); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#448426,#5cb22d,#5dbe30,#64c132); /* Standard syntax */ 
+    color: #FFFFFF;
+    text-align: center;
+}
+.switch-inner:before {
+    content: "Disable";
+    padding-right: 13px;
+    background: -webkit-linear-gradient(#A3A7A1,#A9ACA8,#AAAEA8,#DBDEDA); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#A3A7A1,#A9ACA8,#AAAEA8,#DBDEDA); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#A3A7A1,#A9ACA8,#AAAEA8,#DBDEDA); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#A3A7A1,#A9ACA8,#AAAEA8,#DBDEDA); /* Standard syntax */ 
+    color: #FFFFFF;
+    text-align: right;
+    text-align: center;
+}
+.switch-circle {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 1.5px;
+    background: #FFFFFF;
+    border: 2px solid #999999;
+    border-radius: 25px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    -moz-transition: all 0.3s ease-in 0s;
+    -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s; 
+}
+
+.switch-checkbox:checked + .switch-label .switch-inner {
+    margin-left: 0;
+}
+.switch-checkbox:checked + .switch-label .switch-circle {
+   left:69px;
+}

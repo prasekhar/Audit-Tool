@@ -1,0 +1,141 @@
+<!-- Main Section stats -->
+    <section id='page-content' ng-controller="projectController">
+          <!-- Page Title starts -->
+          <div class='page-title'>
+            <h1>Create New Project</h1>
+          </div>
+          <!-- Page title ends -->
+
+          <!-- TMain content  Div starts -->
+          <div class="table-grid clearfix">
+
+            <!-- Table search main starts -->
+            <div class="project-search clearfix">
+                <div class="protitle clearfix">
+                    <h2>Create</h2>
+                </div>
+                <div class="project-button pull-right">
+                    <button type="button" class="btn btn-primary pull-right" data-target="#uploadModal" id="success" data-toggle="modal"  ng-click="insertprojects()">Bulk Upload</button>
+                </div>
+            </div>
+            <div class="modal fade" id="uploadModal" role="dialog">
+                <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Project Data Moving to DB</h4>
+                </div>
+                <div class="modal-body">
+                   <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{userid}}" aria-valuemin="0" aria-valuemax="707" style="width:70%">
+                        <span class="sr-only">70% Complete</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+  
+            <!-- Table search main ends -->
+                    
+            <!-- Create project form starts -->
+            <form class="form-horizontal">
+
+                <div class="form-group">
+                     <label for="projName" class="col-md-4  col-sm-2 control-label">Name</label>
+                     <div class="col-sm-6">
+                       <input type="text" class="form-control" id="projName" ng-model="project.projectName"/>
+                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer" class="col-md-4  col-sm-2 control-label">Customer</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="customer" ng-model="project.customer">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="projType" class="col-md-4  col-sm-2 control-label">Project Type</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="projType" ng-model="project.projectType">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pocs" class="col-md-4  col-sm-2 control-label">Poc(s) attended</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="pocs" ng-model="project.pocs">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="auditor" class="col-md-4  col-sm-2 control-label">Auditor</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="auditor" ng-model="project.auditor">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="status" class="col-md-4  col-sm-2 control-label">Status</label>
+                    <div class="col-sm-6">
+                        <select id="status" class="form-control" ng-model="project.status">
+                        <option value="To be scheduled">To be Scheduled</option>
+                        <option value="Started">Started</option>
+                        <option value="Working">Working</option>
+                        <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="technology" class="col-md-4  col-sm-2 control-label">Technology & Tools</label>
+                    <div class="col-sm-6">
+                        <select id="technology" class="form-control" multiple ng-model="project.technology">
+                            <option ng-repeat="tech in technologyList" value="{{tech.name}}">{{tech.name}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="col-md-4  col-sm-2 control-label">Description</label>
+                    <div class="col-sm-7">
+                        <textarea class="form-control" id="description" ng-model="project.description"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="delivery" class="col-md-4  col-sm-2 control-label">Project delivery methodology</label>
+                    <div class="col-sm-7">
+                        <textarea class="form-control" id="delivery" ng-model="project.delivery"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="statusupdates" class="col-md-4  col-sm-2 control-label">Status updates and meeting schedules</label>
+                    <div class="col-sm-7">
+                        <textarea class="form-control" id="statusupdates" ng-model="project.statusupdates"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-4"></div>
+                    <div class="col-sm-8">
+                         <button  class="btn btn-primary pull-left" ng-click="saveProject(project)">Create Project</button>
+                         <button  class="btn btn-default ">Cancel</button>
+                    </div>
+                </div>
+
+            </form>
+            <!-- Create project Form ends -->
+         </div>
+         <!-- Main content Div ends -->  
+    </section>
+<!-- Main Section ends -->

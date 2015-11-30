@@ -1,0 +1,232 @@
+<link rel="stylesheet" href="../../assets/css/chosen.min.css" />
+<!-- Page content starts -->
+ <section id='page-content'  ng-controller="userController">
+  
+  <!-- Page title div -->
+        <div class='page-title'>
+            <h1>User</h1>
+        </div>
+  <!-- Page title div ends -->
+     
+  <!-- Table grid Section Starts -->
+    <div class="table-grid clearfix">
+
+        <!-- Paje sub title starts -->
+            <div class="project-search clearfix">
+                <div class="protitle clearfix">       
+                    <h2>Create</h2>
+                </div>
+                <div class="project-button pull-right">
+                    <button type="button" class="btn btn-primary pull-right" id="success" data-toggle="modal" data-target="#myModal">Add New User</button>
+                </div>
+            </div>
+        <!-- Page sub title ends -->
+        
+        <!-- Table div starts -->
+            <div class="data-table">
+
+                <!-- Table start -->
+                    <table class="table table-striped table-bordered " >
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Project-Id</th>
+                                <th>Location</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr dir-paginate="user in userlist |itemsPerPage:5">
+                                <td class="P-ID">{{user.username}}</td>
+                                <td>{{user.user_email}}</td>
+                                <td>{{user.user_role}}</td>
+                                <td>{{user.user_projectId}}</td>
+                                <td>{{user.user_location}}</td>
+                                <td>
+                                    <button type="button" class="btn  btn-sm edit modify" data-toggle="modal" data-target="#editUser" ng-click="editUser(user._id)">Edit</button>
+                                    <button type="button" class="btn btn-sm delete modify" data-toggle="modal" data-target="#deleteModal"ng-click="getuser(user)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <!-- Table ends -->
+                <!-- Pagination Start -->
+                    <dir-pagination-controls
+                      max-size="5"
+                      direction-links="true"
+                      boundary-links="true" >
+                    </dir-pagination-controls>
+                   <!-- Pagination end -->
+            </div>
+        <!-- Table div ends  -->
+    </div>
+  <!-- Table grid Section ends -->
+
+    <!-- Modal popups  New user start -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+             <div class="modal-content" id="modelContent">
+                <div class="header-part">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">New User</h4>
+                    </div>
+                </div>
+                
+                <div class="modal-body clear-fix">
+                    <!-- Form for new user starts -->
+                     <form class="form-horizontal"> 
+                      
+                      <div class="row">   
+
+                            <div class="form-group">
+                                <label class="col-md-3  col-sm-2 control-label">User Name</label>
+                                 <div class="col-sm-4">
+                                   <input type="text" class="" id="textbox" required ng-model="adduser.name">
+                                 </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3  col-sm-2 control-label">Password</label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="" id="textbox" required ng-model="adduser.password">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3  col-sm-2 control-label" id="adduserlabel">Email</label>
+                                <div class="col-sm-4">
+                                   <input type="email" class="" id="textbox" required ng-model="adduser.email">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3  col-sm-2 control-label" id="role_class">Role</label>
+                                <div class="col-sm-4">
+                                 <select data-placeholder="Select section" class="" style="width:266px;height:30px;" ng-model="adduser.role">
+                                        <option ng-repeat="roleName in rolelist">{{roleName.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3  col-sm-2 control-label">Project Id</label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="" id="textbox" required ng-model="adduser.projectid">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3  col-sm-2 control-label">Location</label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="" id="textbox" required ng-model="adduser.location">
+                                </div>
+                            </div>
+
+                            <div class="modal-footer" id="modalFooter">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="create-sel" ng-click="add_user(adduser)">Create User</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-sel">Cancel</button>
+                            </div>
+                      </div>
+
+                     </form>
+                     <!-- Form for new user ends -->
+                </div>
+            </div>
+          </div>
+        </div>
+    <!-- Modal popup new user ends -->
+
+   <!-- Modal popup Edit user starts -->
+       <div class="modal fade" id="editUser" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" id="modelContent">
+                    <div class="header-part">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Edit User</h4>
+                        </div>
+                    </div>
+
+                    <div class="modal-body clear-fix">
+                       <form class="form-horizontal">
+                            <div class="row">  
+
+                              <div class="form-group">
+                                <label class="col-md-2  col-sm-2 control-label" >UserName</label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="" id="textbox" required ng-model="edituser.username">
+                                </div>
+                              </div>
+                            
+                                <div class="form-group">
+                                    <label class="col-md-2  col-sm-2 control-label" id="adduserlabel">Email</label>
+                                    <div class="col-sm-4">
+                                      <input type="text" class="" id="textbox" required ng-model="edituser.user_email">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2  col-sm-2 control-label">Role</label>
+                                    <div class="col-sm-4">
+                                      <input type="text" class="" id="textbox" required ng-model="edituser.user_role">
+                                   </div>
+                               </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2  col-sm-2 control-label">ProjectId</label>
+                                    <div class="col-sm-4">
+                                      <input type="text" class="" id="textbox" required ng-model="edituser.user_projectId">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2  col-sm-2 control-label">Location</label>
+                                    <div class="col-sm-4">
+                                     <input type="text" class="" id="textbox" required ng-model="edituser.user_location">
+                                    </div>
+                                </div>
+                           </div>
+                       </form>
+                        <div class="modal-footer" id="modalFooter">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="create-sel" ng-click="updateUser(edituser)">update User</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-sel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    <!-- Modal popup edit user ends -->
+    <!--modal popup for delete user-->
+    <div class="modal fade" id="deleteModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="header-part">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Delete User</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body clear-fix">
+                        <p class="pull-left">Do You really Want to Delete..!</p>
+                    </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-default" data-dismiss="modal" id="create-sel" ng-click="removeuser(userdata.id)">Yes</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-sel">No, Go Back</button> 
+                        </div>
+                    </div>
+            </div>
+        </div>
+ </section>
+<!-- Page content ends -->
+
+
+    
+
+         

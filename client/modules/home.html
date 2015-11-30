@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="auditTool">
+  <head>
+    <title> {{$state.current.data.title}}</title> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"> 
+        <link rel="stylesheet" href="../assets/css/bootstrap.css">
+        <link rel="stylesheet" href="../assets/css/dashboard.css">
+        <link rel="stylesheet" href="../assets/css/Webfonts.css">
+        <link rel="stylesheet" href="../assets/css/sections.css">
+        <link rel="stylesheet" href="../assets/css/chosen.min.css">
+      
+  
+        <link rel="shortcut icon" type="image/png" href="../assets/images/logo1.png"/>  
+  </head>
+  <body>
+    <!--Wrapper-->
+      <div id="wrapper" ng-controller="dashboardController">
+        
+         <!--Page header Start-->
+          <header>
+            <div id="menu-toggle" class="showalways">
+                  <span class="border"></span>
+                  <span class="border"></span>
+                  <span class="border"></span>
+            </div>
+           <!--Logo area-->
+           <div class="logo">
+              <a ui-sref="home">
+              <img src="../assets/images/logo.jpg" alt="Cognizant  Interactive Logo"/></a>
+           </div>  
+          </header>
+         <!-- Page Header end-->
+
+          <!--Main Container body-->  
+            <section id="main-container">
+
+                <!--Side Menu Bar-->
+                <aside class="sidebar" id="navbar">
+             
+                      <div class="profile">
+                          <div class="profilepic">
+                            <img src="../assets/images/profile.jpg" alt="Profile picture"/>
+                          </div>
+                          <div class="user-data">
+                            <p class="name">{{logged.user.username}}</p>
+                            <a href="" class="logout" ng-click="logout()">Logout</a>  
+                          </div>
+                     </div>
+
+                     <!--Navigation Bar-->
+                          <nav class="navigation">
+                              <ul>
+
+                                <li class="col-sm-6 col-md-12" ng-repeat="link in links" ui-sref-active="active">
+                                  <span class={{link.icon}}></span>
+                                  <a ui-sref={{link.link}}>{{link.link}}</a>
+                               </li>              
+                            </ul>  
+                      </nav>
+                      <!--Navigation Bar end-->   
+                </aside>
+                <!-- Side Menu end-->
+
+                   <!--Routing Main Content-->
+                      <div class="content">
+                         <div ui-view></div>
+                      </div>
+                   <!--Routing Main Content end-->
+            </section>
+          <!--Main Content body end-->
+      </div>
+    <!-- Wrapper ends -->
+  </body>
+
+    <!-- Library Files-->
+    <script src="../assets/js/lib/jquery/jquery.js"></script>
+    <script src="../assets/js/lib/angular/angular.js"></script>
+    <script src="../assets/js/lib/angular/angular-route.js"></script>
+    <script src="../assets/js/lib/angular/angular-cookie.js"></script>
+    <script src="../assets/js/lib/bootstrap/bootstrap.js"></script>
+    <script src="../assets/js/lib/donutchart/raphael-min.js"></script>
+    <script src="../assets/js/lib/donutchart/morris-0.4.1.min.js"></script>
+    <script src="../assets/js/lib/ngtable/ng-table.js"></script>
+    <script src="../assets/js/lib/uirouter/ui-router.js"></script>
+    <script src="../assets/js/lib/dirPagination.js"></script>
+    <script src="../../assets/js/lib/filereader/jszip.js"></script>
+    <script src="../../assets/js/lib/filereader/loadash.min.js"></script>
+    <script src="../../assets/js/lib/filereader/slideToggler.js"></script>
+    <script src="../../assets/js/lib/filereader/xlsx-reader.js"></script>
+    <script src="../../assets/js/lib/filereader/xlsx.js"></script>
+   <script src="../../assets/js/lib/chosen/chosen.jquery.min.js"></script>
+    <script src="../../assets/js/lib/chosen/chosen.js"></script>
+
+    <!-- Main app File-->
+    <script src="../assets/js/app.js"></script>
+
+    <!-- Directives-->
+    <script type="text/javascript" src="../assets/js/directives/directives.js"></script>
+    <script type="text/javascript" src="../assets/js/directives/adminDirective.js"></script>
+    <script type="text/javascript" src="../assets/js/directives/auditorDirective.js"></script>
+    <script type="text/javascript" src="../assets/js/directives/checkDirective.js"></script>
+
+
+    <!-- Contollers-->
+    <script type></script>
+    <script src="../assets/js/controllers/controller.dashboard.js"></script>
+    <script src="../assets/js/controllers/controller.project.js"></script>
+    <script src="../assets/js/controllers/controller.tasks.js"></script>
+    <script src="../assets/js/controllers/controller.technologies.js"></script>
+    <script src="../assets/js/controllers/controller.users.js"></script>
+    <script src="../assets/js/controllers/controller.sections.js"></script>
+    <script src="../assets/js/controllers/controller.auditdash.js"></script>
+    <script src="../assets/js/controllers/controller.question.js"></script>
+    <script src="../assets/js/controllers/bulkUploadController.js"></script>
+    <script src="../assets/js/controllers/controller.auditPhase.js"></script>
+    <script src="../assets/js/controllers/controller.auditassign.js"></script>
+    
+    
+    <!-- Factories-->
+    <script src="../assets/js/services/factory.dashboard.js"></script>
+    <script src="../assets/js/services/factory.projects.js"></script>
+    <script src="../assets/js/services/factory.tasks.js"></script>
+    <script src="../assets/js/services/factory.logout.js"></script>
+    <script src="../assets/js/services/factory.technologies.js"></script>
+    <script src="../assets/js/services/factory.users.js"></script>
+    <script src="../assets/js/services/factory.sections.js"></script>
+    <script src="../assets/js/services/factory.auditdash.js"></script>
+    <script src="../assets/js/services/factory.adminprojects.js"></script>
+    <script src="../assets/js/services/factory.questions.js"></script>
+    <script src="../assets/js/services/factory.auditphase.js"></script>
+    
+
+    
+  <script>
+      $(document).ready(function(){
+         $("#menu-toggle").click(function(){
+             $('#navbar').toggleClass("show");
+         });
+      });
+  </script>
+</html>

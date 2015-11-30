@@ -1,0 +1,63 @@
+<!-- Main section starts -->
+<section id='page-content' ng-controller="projectController">
+  
+  <!-- Page title start -->
+  <div class='page-title'>
+      <h1>Projects</h1>
+  </div>
+ <!-- Page title ends -->
+
+ <!-- Page content start -->
+  <div class="table-grid clearfix">
+
+    <!-- Page subheading start -->
+      <div class="project-search clearfix">
+          <div class="protitle clearfix">
+               <h2>Projects List </h2>
+          </div>
+          <div class="project-button pull-right">
+              <input type="search" placeholder="Search.."  ng-model="search">
+             
+              <a class="btn btn-primary pull-right rightbtn" ui-sref="newProject" id="success">Create New Project</a>
+          </div>
+      </div>
+    <!-- Page subheading ends -->
+  
+  <!-- Projects list starts -->
+   <div class="data-table">
+       <div class="row">
+
+        <!-- Project Ng repeat starts -->
+        <div dir-paginate="projects in projectsList |filter:search|itemsPerPage:15" class='col-md-4'>
+          
+          <!-- Project data Starts -->
+          <div class="projectbody projectdiv">
+               <div class="project-content" ui-sref="projectInfo({pid:projects._id})" ng-click="projectinfo(projects._id)">
+                 <p>Project Name: {{projects.projectname}}</p>
+                 <p>Project Id: {{projects.projectid}}</p>    
+               </div>     
+          </div>
+          <!-- Project data ends -->
+
+       
+        </div>
+        <!-- Project Ng repeat ends -->
+
+
+
+       </div>  
+   </div>
+    
+                    <dir-pagination-controls
+                      max-size="5"
+                      direction-links="true"
+                      boundary-links="true" >
+                    </dir-pagination-controls>
+                   <!-- Pagination end -->
+   <!-- Project list ends  -->
+ </div>
+
+<!-- Page Content ends -->
+
+ </section>
+ <!-- Main Section ends -->

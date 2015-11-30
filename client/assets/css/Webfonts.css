@@ -1,0 +1,23 @@
+
+@font-face {font-family: 'UniversLTStd';src: url('../fonts/28EFF3_13_0.eot');src: url('../fonts/28EFF3_13_0.eot?#iefix') format('embedded-opentype'),url('../fonts/28EFF3_13_0.woff') format('woff'),url('../fonts/28EFF3_13_0.ttf') format('truetype');}
+
+@font-face {font-family: 'UniversLTStd-Bold';src: url('../fonts/28EFFA_1_0.eot');src: url('../fonts/28EFFA_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/28EFFA_1_0.woff') format('woff'),url('../fonts/28EFFA_1_0.ttf') format('truetype');}
+
+@font-face {font-family: 'UniversLTStd-Light';src: url('../fonts/28EFF3_9_0.eot');src: url('../fonts/28EFF3_9_0.eot?#iefix') format('embedded-opentype'),url('../fonts/28EFF3_9_0.woff') format('woff'),url('../fonts/28EFF3_9_0.ttf') format('truetype');}
+
+@font-face {font-family: 'UniversLTStd-LightCn';src: url('../fonts/28EFF3_A_0.eot');src: url('../fonts/28EFF3_A_0.eot?#iefix') format('embedded-opentype'),url('../fonts/28EFF3_A_0.woff') format('woff'),url('../fonts/28EFF3_A_0.ttf') format('truetype');}
+
+@font-face {font-family: 'AvenirNextLTPro-Regular';src: url('../fonts/28EFF3_2A_0.eot');src: url('../fonts/28EFF3_2A_0.eot?#iefix') format('embedded-opentype'),url('../fonts/28EFF3_2A_0.woff') format('woff'),url('../fonts/28EFF3_2A_0.ttf') format('truetype');}
+
+@font-face {font-family: 'AvenirNextLTPro-Demi';src: url('../fonts/28EFF3_27_0.eot');src: url('../fonts/28EFF3_27_0.eot?#iefix') format('embedded-opentype'),url('../fonts/28EFF3_27_0.woff') format('woff'),url('../fonts/28EFF3_27_0.ttf') format('truetype');}
+
+@font-face {font-family: 'AvenirNextLTPro-Medium';src: url('../fonts/28EFF3_2C_0.eot');src: url('../fonts/28EFF3_2C_0.eot?#iefix') format('embedded-opentype'),url('../fonts/28EFF3_2C_0.woff') format('woff'),url('../fonts/28EFF3_2C_0.ttf') format('truetype');}
+
+@font-face {font-family: 'AvenirNextLTPro-Bold';src: url('../fonts/28EFF3_1D_0.eot');src: url('../fonts/28EFF3_1D_0.eot?#iefix') format('embedded-opentype'),url('../fonts/28EFF3_1D_0.woff') format('woff'),url('../fonts/28EFF3_1D_0.ttf') format('truetype');}
+
+@font-face {
+	font-family: 'OpenSans-Light';
+	src: url('../fonts/OpenSans-Light-webfont.eot');
+	src: local('OpenSans-Light-webfont'), url('../fonts/OpenSans-Light-webfont.woff') format('woff'), url('../fonts/OpenSans-Light-webfont.ttf') format('truetype');
+}
+

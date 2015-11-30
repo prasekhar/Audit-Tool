@@ -1,0 +1,245 @@
+/* Global CSS */
+html,body
+{
+font:100%/150% "UniversLTStd";
+}
+body
+{
+color:#222;
+background: #222 url(../images/bg.jpg) repeat-x 0 0 ;
+}
+a,a:hover{
+	text-decoration: none;
+}
+ul,ol{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+nav  ul li a, nav ul li a:hover{
+text-decoration: none;
+}
+.row {
+    margin-left: 8px;
+    margin-right: 7px;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4,
+.col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11,
+.col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, 
+.col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, 
+.col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11,
+.col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	padding-left:7px;
+	padding-right:8px;
+}
+/* Structure CSS */
+#wrapper{
+max-width:1200px;
+
+margin:0 auto;
+}
+header
+{
+height:85px;
+}
+#menu
+{
+width:225px;
+display:table-cell;
+background-color: #263948;
+}
+#page-content
+{
+width:975px;
+display:table-cell;
+background-color: #EEEEEE;
+padding:20px 15px;
+}
+
+/* Header CSS */
+
+/* Menu CSS */ 
+.profile{
+color:#9CB3C5;
+}
+
+.profilepic{
+margin:15px;
+width:50px;
+float:left;
+}
+
+.profilepic img{
+border:3px solid #000;
+}
+
+.name{
+font-size:16px;
+margin-top: 14px;
+}
+
+.logout{
+color:#FC4324;
+}
+
+.user-data{
+ overflow:hidden;
+}
+.nav{
+color:#879AAB;
+}
+.nav ul li:hover{
+background:url('../images/hover-icon.jpg') #111B24;
+background-repeat: no-repeat;
+background-position: 100% 50%;
+
+}
+.nav ul li a{
+margin:10px;
+color:#879AAB;
+}
+.nav ul li a:hover,  .nav ul li:hover a, .nav ul li:hover span{
+color:#fff;
+}
+.nav ul li{
+padding: 12px;
+border-top:1px solid #4B5E6D;
+border-bottom:1px solid #111F2C;
+}
+/* Content CSS */
+
+/* audit phase CSS */
+.page-title{
+	color: #007e40;
+	font-size: 24px;
+	font-family: "UniversLTStd-Light";
+	font-weight: 500;
+}
+#left_content{
+	width: 197px;
+}
+ .audit_phase_nav ul li{
+	background: -webkit-linear-gradient(#eeeeee,#e8e8e8,#e6e6e6,#e0dfdf,#dcdbdb,#d7d7d7,#d1d0d0); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(#d2d2d2,#e7e7e7,#dfdede,#e1e1e1,#dedddd,#d8d8d8,,#d1d0d0); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(#d2d2d2,#e7e7e7,#dfdede,#e1e1e1,#dedddd,#d8d8d8,,#d1d0d0); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to #d2d2d2,#e7e7e7,#dfdede,#e1e1e1,#dedddd,#d8d8d8,,#d1d0d0); /* Standard syntax */
+	padding: 11px 0 11px 15px;
+	font-size: 14px;
+	color: #7e7e7e;
+}
+ .audit_phase_nav ul li:last-child{
+ 	border-bottom: 1px solid #d1d0d0;
+}
+.audit_phase_nav ul li{
+	color: #7e7e7e;
+	text-decoration: none;
+}
+.audit_phase_nav ul li :hover{
+	background-color: white;
+}
+#right_content{
+	width: 748px;
+	padding: 0px 15px 34px 15px;
+	background-color: #ffffff;
+}
+.rch_leftheader p{
+	color: #333333;
+	font-size: 14px;
+	font-family: "arial";
+	font-weight: bold;
+	padding: 16px 0px 10px 0px;
+	display: inline-block;
+}
+.main_rightcontent{
+	background-color: #f4f4f4;
+	padding-top: 17px;
+	padding-bottom: 27px;
+}
+.audit_phase_nav ul li.active{
+	background: #ffffff;
+	border: none;
+}
+#auditPhaseform{
+	text-align: center;
+}
+#form_align{
+	text-align: center;
+}
+.fields{
+	width: 328px;
+	border-radius: 0;
+}
+.attachstyle{
+	padding-bottom: 16px;
+}
+.browse_file{
+  display: inline-block;
+  width: 150px;
+  padding: 8px 11px;
+  background-color: #5daee7;
+  color: #ffffff;
+  font-size: 14px;
+  border-bottom: 5px outset #4c95c9;
+}
+#attachment{
+	margin-left: 8px;
+}
+.status_selectb{
+	margin-left: -30px;
+
+}
+.chosen-container-single .chosen-single span {
+  display: block;
+  overflow: hidden;
+  margin-left: -250px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0 0 0 8px;
+  height: 35px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.chosen-container {
+  margin-left: -157px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border: 0;
+  }
+  .label_name{
+  	font-size: 14px;
+  	color: #5e5e5e;
+  }
+ .switchbut_dir{
+ 	display:inline;
+ 	float: right;
+ 	margin-left: 5px;
+ }
+ .question_mark{
+  display: inline;
+  width: 16px;
+  height: 17px;
+  border-radius: 50px;
+  border: 1px solid #565656;
+  float: left;
+  padding-top: 0px;
+  position: relative;
+  background-color: black;
+  margin-top: 5px;
+ }
+ #quest_symbol{
+ 	
+ 	position: absolute;
+  /* top: 0px; */
+  color: white;
+  font-size: 15px;
+ }
+ .rch_rightLogo{
+ 	padding: 16px 0 0 0;
+ }

@@ -1,0 +1,152 @@
+{
+  "chennai": [
+    {
+      "label": "Red",
+      "value": 12
+    },
+    {
+      "label": "Green",
+      "value": 30
+    },
+    {
+      "label": "Ember",
+      "value": 20
+    },
+    {
+      "label": "Not Done",
+      "value": 38
+    }
+  ],
+  "bangalore": [
+    {
+      "label": "Red",
+      "value": 18
+    },
+    {
+      "label": "Green",
+      "value": 25
+    },
+    {
+      "label": "Ember",
+      "value": 23
+    },
+    {
+      "label": "Not Done",
+      "value": 34
+    }
+  ],
+  "cochin": [
+    {
+      "label": "Red",
+      "value": 32
+    },
+    {
+      "label": "Green",
+      "value": 10
+    },
+    {
+      "label": "Ember",
+      "value": 30
+    },
+    {
+      "label": "Not Done",
+      "value": 28
+    }
+  ],
+ 
+  "pune": [
+    {
+      "label": "Red",
+      "value": 22
+    },
+    {
+      "label": "Green",
+      "value": 10
+    },
+    {
+      "label": "Ember",
+      "value": 40
+    },
+    {
+      "label": "Not Done",
+      "value": 28
+    }
+  ],
+
+  "hyderabad": [
+    {
+      "label": "Red",
+      "value": 13
+    },
+    {
+      "label": "Green",
+      "value": 30
+    },
+    {
+      "label": "Ember",
+      "value": 20
+    },
+    {
+      "label": "Not Done",
+      "value": 34
+    }
+  ],
+
+
+  "coimbatore": [
+    {
+      "label": "Red",
+      "value": 24
+    },
+    {
+      "label": "Green",
+      "value": 32
+    },
+    {
+      "label": "Ember",
+      "value": 21
+    },
+    {
+      "label": "Not Done",
+      "value": 44
+    }
+  ],
+
+  "gurgoan": [
+    {
+      "label": "Red",
+      "value": 19
+    },
+    {
+      "label": "Green",
+      "value": 26
+    },
+    {
+      "label": "Ember",
+      "value": 40
+    },
+    {
+      "label": "Not Done",
+      "value": 14
+    }
+  ],
+
+  "kolkotta": [
+    {
+      "label": "Red",
+      "value": 22
+    },
+    {
+      "label": "Green",
+      "value": 20
+    },
+    {
+      "label": "Ember",
+      "value": 30
+    },
+    {
+      "label": "Not Done",
+      "value": 24
+    }
+  ]
+}

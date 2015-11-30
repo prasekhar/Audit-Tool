@@ -1,0 +1,227 @@
+/* Global CSS */
+html,body
+{
+font:100%/150% "UniversLTStd";
+}
+body
+{
+color:#222;
+background: #222 url(../images/bg.jpg) repeat-x 0 0 ;
+}
+a,a:hover{
+	text-decoration: none;
+}
+ul,ol{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+nav  ul li a, nav ul li a:hover{
+text-decoration: none;
+}
+.row {
+    margin-left: 8px;
+    margin-right: 7px;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+padding-left:7px;
+padding-right:8px;
+}
+p{
+	margin:0px;
+}
+
+.show{
+visibility: visible;
+display:table-cell!important;
+}
+.form-horizontal .form-group {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+ .input-group-addon:last-child {
+  border-left: 1px solid #ccc;
+}
+/* Structure CSS */
+#wrapper{
+max-width:1200px;
+
+margin:0 auto;
+}
+header
+{
+height:85px;
+}
+#menu
+{
+width:225px;
+display:table-cell;
+background-color: #263948;
+}
+#page-content
+{
+width:975px;
+display:table-cell;
+background-color: #EEEEEE;
+}
+.page-title h1
+{
+margin-top:15px;
+margin-left:15px;
+font-family: "UniversLTStd-Light";
+font-size: 2em;
+color: #007E40;
+}
+/* Header CSS */
+
+/* Menu CSS */ 
+.profile{
+color:#9CB3C5;
+}
+
+.profilepic{
+margin:15px;
+width:50px;
+float:left;
+}
+
+.profilepic img{
+border:3px solid #000;
+}
+
+.name{
+font-size:16px;
+margin-top: 14px;
+}
+
+.logout{
+color:#FC4324;
+}
+
+.user-data{
+ overflow:hidden;
+}
+.nav{
+color:#879AAB;
+}
+.nav ul li:hover{
+background:url('../images/hover-icon.jpg') #111B24;
+background-repeat: no-repeat;
+background-position: 100% 50%;
+
+}
+.nav ul li a{
+margin:10px;
+color:#879AAB;
+}
+.nav ul li a:hover,  .nav ul li:hover a, .nav ul li:hover span{
+color:#fff;
+}
+.nav ul li{
+padding: 12px;
+border-top:1px solid #4B5E6D;
+border-bottom:1px solid #111F2C;
+}
+/* Content CSS */
+/* Dashboard CSS */
+.graph
+{
+background-color:#fff;
+}
+
+/* Login Page CSS */
+#wrapper{
+	height: 100%;
+	font:100%/150% "UniversLTStd-Light";
+}
+
+.form{
+	margin-top: 25px;
+}
+
+.login-page{
+	position: absolute;
+	background:#ffffff;
+	width:352px;
+	border:1px solid #ffffff;
+	left: 50%;
+	top:50%;
+	margin-left: -175px;
+	margin-top: -205px;
+	
+}
+
+
+/* login-form CSS*/
+
+.login-field{
+	width:320px;
+	margin: 0 auto;
+}
+.login-field label{	
+	font-size: 0.875em;
+	color:#333333;
+	font-weight: normal;
+}
+
+.inputsize{
+	border-radius: 0px;
+}
+.input-group-addon{
+	border-radius: 0px;
+}
+.email-field{
+	margin-bottom: 20px;
+}
+
+.login-field h1{
+  font-size: 1.125em;
+  color: #333333;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.error-message{
+	color:#e42d28;
+	font-size: 0.75em;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.icon-field{
+ 	float: left;
+ 	width: 40px;
+ }
+ .input-field{
+ 	float: left;
+ 	width: 280px;
+ }
+ .input-group-addon{
+
+ 	height:34px;
+ }
+
+
+
+/* Login-button CSS*/
+
+.btn-primary{
+	border: none;
+	background: #8dc859;
+	color:#ffffff;
+	width:57px;
+	padding: 6px 0px;
+	border-bottom: 5px solid #6fad39;
+	float:right;
+	margin-bottom:22px; 
+	font-size: 0.875em;
+	
+}
+.btn-primary:hover{
+	background: #8dc859;
+border-bottom: 5px solid #6fad39;
+}
+.btn{
+	border-radius:0px;
+}

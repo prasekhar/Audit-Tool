@@ -1,0 +1,40 @@
+<section id='page-content'>
+		
+    <div class='page-title'>
+       <h1>Import</h1>
+    </div>
+     <div class="bar">
+    </div>
+    <div class="table-grid clearfix">
+
+      <div class="project-search clearfix" ng-controller="bulkUploadController">
+          <div class="protitle clearfix">
+               <h2>Importing A File </h2>
+          </div>
+
+         
+      </div>
+      <div class="upload">
+      <input type="file" name="excel_file" accept=".xlsx" onchange="angular.element(this).scope().fileChange(this.files);" required="true">
+    </div>
+        
+
+  <div class="import">
+       <button type="button" class="btn btn-success" id="success" ng-click="data()">Import</button>
+      </div>
+        <div ng-hide="sprint"  ng-model="fix">
+                    {{sheets}}
+
+           </div>
+ 
+  
+         
+
+
+
+    
+         
+         
+		</section>
+
+   

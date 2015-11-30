@@ -1,0 +1,225 @@
+          
+            <section id='page-content' ng-controller="dashboardController">
+                <div class='page-title'>
+                    <h1>Dashboard</h1>
+                </div>
+                <div class='row'>
+                    
+                    <div class='col-sm-6 col-md-6'>
+                        <div class="graph-admin clearfix">
+                            <div class="pull-left picture">
+                       
+                                   <area name="hyderabad" resize="true" style="height:200px; border-bottom:0"></area>
+                                </div>
+                                <div class="pull-left description">
+                                    <h4> Total No. of projects</h4>
+                                    <h3> 50 </h3>
+                                    <ul class="pull-left">
+                                        <li class="pull-left">
+                                            <span class="glyphicon glyphicon-stop green"></span>
+                                            <span>Green</span>
+                                        </li>
+                                        <li class="pull-left">
+                                            <span class="glyphicon glyphicon-stop amber"></span>
+                                            <span>Amber</span>
+                                        </li>
+                                    </ul>
+                                    <ul class="pull-left">
+                                        <li class="pull-left">
+                                            <span class="glyphicon glyphicon-stop red"></span>
+                                            <span>Red</span>
+                                        </li>
+                                        <li class="pull-left">
+                                            <span class="glyphicon glyphicon-stop not-done"></span>
+                                            <span>Not Done</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                        <div class='col-sm-6 col-md-6 '>
+                                            <div class="row row-2">
+                                                <div class='col-sm-6 col-md-6 total'>
+                                                    <div class="coloumn-1 clearfix">
+                                                        <span class="glyphicon glyphicon-ok-sign pull-left correct"></span>
+                                                        <div class="pull-left">
+                                                            <p class="icon-text">Green</p>
+                                                            <p class="icon-value">10</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class='col-sm-6 col-md-6'>
+                                                    <div class="coloumn-2 clearfix">
+                                                        <div class="star pull-left">
+                                                            <span class="glyphicon glyphicon-star pull-left star-icon"></span>
+                                                        </div>
+                                                        <div class="pull-left">
+                                                            <p class="icon-text"> Amber</p>
+                                                            <p class="icon-value">10</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row-2">
+                                                <div class='col-sm-6 col-md-6 total'>
+                                                    <div class="coloumn-1 clearfix">
+                                                        <span class="glyphicon glyphicon-circle-arrow-down pull-left download"></span>
+                                                    </span>
+                                                </span>
+                                                <div class="pull-left">
+                                                    <p class="icon-text"> Red</p>
+                                                    <p class="icon-value">10</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='col-sm-6 col-md-6'>
+                                            <div class="coloumn-2 clearfix">
+                                                <span class="glyphicon glyphicon-minus-sign minus pull-left"></span>
+                                                <div class="pull-left">
+                                                    <p class="icon-text"> Not Done</p>
+                                                    <p class="icon-value">10</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-grid">
+                                <div class="project-search clearfix">
+                                    <div class="protitle clearfix">
+                                        <div class="bar"></div>
+                                        <h2>Projects</h2>
+                                    </div>
+                                    <div class="search-box clearfix">
+                                        <div class="search-icon">
+                                            <input type="text" class="form-control" id="searchbut" placeholder="Search...">
+                                            <a>
+                                                <span class="glyphicon glyphicon-search" id="searching"></span>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="data-table">
+                                        <table class="table table-striped table-bordered" >
+                                            <thead>
+                                                <tr>
+                                                    <th>Project ID</th>
+                                                    <th>Project Name</th>
+                                                    <th>Customer</th>
+                                                    <th>Start Date</th>
+                                                    <th>feedback</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="project in project_list" ng-class="myVar">
+                                                    <td>{{project.project_id}}</td>
+                                                    <td>{{project.project_name}}</td>
+                                                    <td>{{project.customer}}</td>
+                                                    <td>{{project.feedback}}</td>
+                                                    <td>{{project.start_date}}</td>
+                                                    <td>
+                                                        
+                                                        <button data-toggle="modal" data-target="#editProjectModal" ng-click=editProject(project._id)>
+                                                            <span class="glyphicon glyphicon-pencil  action"></span>
+                                                        </button>
+                                                        <button data-toggle="modal" data-target="#deleteProjectModal" ng-click="give(project._id)">
+                                                            <span class="glyphicon glyphicon-trash  action"></span>
+                                                        </button>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                    <div class="paging clearfix">
+                                        <div class="show-entry">
+                                            <p>Showing 1 to 10 of {{totalproject}}</p>
+                                        </div>
+                                        <nav class="pagelink">
+                                            <ul class="pagination">
+                                                <li class="list-item">
+                                                    <a href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">Previous</span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-item" id="first">
+                                                    <a href="#">1</a>
+                                                </li>
+                                                <li class="list-item">
+                                                    <a href="#">2</a>
+                                                </li>
+                                                <li class="list-item">
+                                                    <a href="#">3</a>
+                                                </li>
+                                                <li class="list-item">
+                                                    <a href="#" aria-label="Next">
+                                                        <span aria-hidden="true">Next</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                 <div class="modal fade" id="editProjectModal" role="dialog">
+                                    <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="header-part">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Edit Project</h4>
+                                            </div>
+                                        </div>
+                                        <div class="modal-body clear-fix">
+                                             <div  class="textbox">
+                                            <p class="pull-left" > Project ID</p>
+                                            <input type="text" class="" id="textbox-name" required ng-model="editproject.project_id">
+                                            </div>
+                                            <div class="textbox">
+                                            <p class="pull-left" > Project NAME</p>
+                                            <input type="text" class="" id="textbox-id" required ng-model="editproject.project_name">
+                                            </div>
+                                            <div class="textbox">
+                                            <p class="pull-left" > Customer</p>
+                                            <input type="text" class="" id="textbox-customer" required ng-model="editproject.customer">
+                                            </div>
+                                            <div class="textbox">
+                                            <p class="pull-left" > Feedback</p>
+                                            <input type="text" class="" id="textbox-feedback" required ng-model="editproject.feedback">
+                                            </div>
+                                            <div class="textbox">
+                                            <p class="pull-left" >Start Date</p>
+                                            <input type="text" class="" id="textbox-date" required ng-model="editproject.start_date">
+
+                                        </div>
+                                            
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal" id="create-sel" ng-click="updateproject(editproject)">Update Project</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-sel">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="deleteProjectModal" role="dialog">
+<div class="modal-dialog">
+<div class="modal-content proContent">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">DELETE PROJECT</h4>
+  </div>
+  <div class="modal-body proBody">
+    <p>ARE YOU SURE</p>
+  </div>
+  <div class="modal-footer proFooter">
+    <button type="button" class="btn btn-primary yes"  data-dismiss="modal" ng-click=deleteProject(Nid)>YES</button>
+    <button type="button" class="btn btn-default no" data-dismiss="modal">NO</button>
+    
+  </div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+                                </section>
+                            

@@ -1,0 +1,302 @@
+<html lang="en">
+    <head>
+        <title>Admin-dashboard</title>
+        <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel="stylesheet" href="../lib/css/bootstrap.css">
+                        <link rel="stylesheet" href="../lib/css/Webfonts.css">
+                            <link rel="stylesheet" href="../css/dashboard.css">
+                            <link rel="stylesheet" href="../css/admin-dashboard.css">
+                            </head>
+                            <body ng-app="auditTool">
+                                <div id="wrapper" ng-controller="dashboardController">
+                                    <header>
+                                         <div id="menu-toggle" class="showalways">
+                                            <span class="border"></span>
+                                            <span class="border"></span>
+                                            <span class="border"></span>
+                                       </div>
+                                        <div class="logo">
+                                            <img src="../images/logo.png" alt="Cognizant Interactive Logo"/>
+                                        </div>
+                                    </header>
+                                    <aside id='menu'>
+                                        <div class="profile">
+                                            <div class="profilepic">
+                                                <img src="../images/profile.jpg" alt="Profile picture"/>
+                                            </div>
+                                            <div class="user-data">
+                                                 <p class="name">{{logged.user.name}}</p>
+                                                 <a href="" class="logout" ng-click="logout()">Logout</a>
+                                            </div>
+                                        </div>
+                                        <nav class="nav" id="navbar">
+                                            <ul>
+                                               <li class="col-sm-6 col-md-12" ng-repeat="link in links"><span class={{link.icon}}><a href={{link.href}}>{{link.link}}</a></span></li>
+                                           </ul> 
+                                        </nav>
+                                    </aside>
+                                    <section id='page-content'>
+                                        <div class='page-title'>
+                                            <h1>Dashboard</h1>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-sm-6 col-md-6'>
+                                                <div class="graph-admin clearfix">
+                                                    <div class="pull-left picture">
+                                                        <img alt="graph" class="progress-graph-admin img-responsive pull-left"
+                        src="../images/graph.png">
+                                                        </div>
+                                                        <div class="pull-left description">
+                                                            <h4> Total No. of projects</h4>
+                                                            <h3> 50 </h3>
+                                                            <ul class="pull-left">
+                                                                <li class="pull-left">
+                                                                    <span class="glyphicon glyphicon-stop green"></span>
+                                                                    <span>Green</span>
+                                                                </li>
+                                                                <li class="pull-left">
+                                                                    <span class="glyphicon glyphicon-stop amber"></span>
+                                                                    <span>Amber</span>
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="pull-left">
+                                                                <li class="pull-left">
+                                                                    <span class="glyphicon glyphicon-stop red"></span>
+                                                                    <span>Red</span>
+                                                                </li>
+                                                                <li class="pull-left">
+                                                                    <span class="glyphicon glyphicon-stop not-done"></span>
+                                                                    <span>Not Done</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class='col-sm-6 col-md-6 '>
+                                                    <div class="row row-2">
+                                                        <div class='col-sm-6 col-md-6 total'>
+                                                            <div class="coloumn-1 clearfix">
+                                                                <span class="glyphicon glyphicon-ok-sign pull-left correct"></span>
+                                                                <div class="pull-left">
+                                                                    <p class="icon-text"> Green</p>
+                                                                    <p class="icon-value">10</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class='col-sm-6 col-md-6'>
+                                                            <div class="coloumn-2 clearfix">
+                                                                <div class="star pull-left">
+                                                                    <span class="glyphicon glyphicon-star pull-left star-icon"></span>
+                                                                </div>
+                                                                <div class="pull-left">
+                                                                    <p class="icon-text"> Amber</p>
+                                                                    <p class="icon-value">10</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row row-2">
+                                                        <div class='col-sm-6 col-md-6 total'>
+                                                            <div class="coloumn-1 clearfix">
+                                                                <span class="glyphicon glyphicon-circle-arrow-down pull-left download"></span>
+                                                            </span>
+                                                        </span>
+                                                        <div class="pull-left">
+                                                            <p class="icon-text"> Red</p>
+                                                            <p class="icon-value">10</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class='col-sm-6 col-md-6'>
+                                                    <div class="coloumn-2 clearfix">
+                                                        <span class="glyphicon glyphicon-minus-sign minus pull-left"></span>
+                                                        <div class="pull-left">
+                                                            <p class="icon-text"> Not Done</p>
+                                                            <p class="icon-value">10</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-grid">
+                                        <div class="project-search clearfix">
+                                            <div class="protitle clearfix">
+                                                <div class="bar"></div>
+                                                <h2>Projects</h2>
+                                            </div>
+                                            <div class="search-box clearfix">
+                                                <div class="search-icon">
+                                                    <input type="text" class="form-control" id="searchbut" placeholder="Search...">
+                                                        <span class="glyphicon glyphicon-search" id="searching"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="data-table">
+                                                <table class="table table-striped table-bordered" >
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Project ID</th>
+                                                            <th>Project Name</th>
+                                                            <th>Customer</th>
+                                                            <th>Start Date</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>10110716</td>
+                                                            <td>AMEX-OPEN</td>
+                                                            <td>American Express Travel RLTD SVCS CO, Inc</td>
+                                                            <td>2014-06-02</td>
+                                                            <td>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-ok action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-pencil  action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-trash  action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-flag  action"></span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10110716</td>
+                                                            <td>AMEX-OPEN</td>
+                                                            <td>American Express Travel RLTD SVCS CO, Inc</td>
+                                                            <td>2014-06-02</td>
+                                                            <td>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-ok action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-pencil  action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-trash  action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-flag  action"></span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10110716</td>
+                                                            <td>AMEX-OPEN</td>
+                                                            <td>American Express Travel RLTD SVCS CO, Inc</td>
+                                                            <td>2014-06-02</td>
+                                                            <td>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-ok action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-pencil  action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-trash  action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-flag  action"></span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10110716</td>
+                                                            <td>AMEX-OPEN</td>
+                                                            <td>American Express Travel RLTD SVCS CO, Inc</td>
+                                                            <td>2014-06-02</td>
+                                                            <td>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-ok action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-pencil  action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-trash  action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-flag  action"></span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10110716</td>
+                                                            <td>AMEX-OPEN</td>
+                                                            <td>American Express Travel RLTD SVCS CO, Inc</td>
+                                                            <td>2014-06-02</td>
+                                                            <td>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-ok action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-pencil  action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-trash  action"></span>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <span class="glyphicon glyphicon-flag  action"></span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="paging clearfix">
+                                                <div class="show-entry">
+                                                    <p>Showing 1 to 10 of 23 entries</p>
+                                                </div>
+                                                <nav class="pagelink">
+                                                    <ul class="pagination">
+                                                        <li class="list-item">
+                                                            <a href="#" aria-label="Previous">
+                                                                <span aria-hidden="true">Previous</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="list-item" id="first">
+                                                            <a href="#">1</a>
+                                                        </li>
+                                                        <li class="list-item">
+                                                            <a href="#">2</a>
+                                                        </li>
+                                                        <li class="list-item">
+                                                            <a href="#">3</a>
+                                                        </li>
+                                                        <li class="list-item">
+                                                            <a href="#" aria-label="Next">
+                                                                <span aria-hidden="true">Next</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </body>
+                             <script src="../lib/js/jquery/jquery.js"></script>
+    <script src="../lib/js/angular/angular.js"></script>
+    <script src="../lib/js/angular/angular-route.js"></script>
+    <script src="../lib/js/angular/angular-cookie.js"></script>
+    <script src="../lib/js/bootstrap/bootstrap.js"></script>
+    <script src="../lib/js/ngtable/ng-table.js"></script>
+    <script src="../lib/js/uirouter/ui-router.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/controllers.js"></script>
+    <script src="../js/factories.js"></script>
+   <script>
+      $(document).ready(function(){
+           
+         $("#menu-toggle").click(function(){
+             $('#navbar').toggleClass("show");
+         });
+      });
+    </script>
+                        </html>

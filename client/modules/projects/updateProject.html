@@ -1,0 +1,119 @@
+<!-- Main container start --> 
+  <section id='page-content' ng-controller="updateProjectController">
+     <!-- Page title starts -->
+      <div class='page-title'>
+          <h1>Edit Project</h1>
+      </div>
+      <!-- Page titl ends  -->
+
+      <!-- Page main content starts -->
+      <div class="table-grid clearfix">
+        <!-- Sub title div starts -->
+          <div class="project-search clearfix">
+              <div class="protitle clearfix">
+                  <h2>Edit</h2>
+              </div>
+              <div class="project-button pull-right">
+              </div>
+          </div>
+        <!-- Sub title div ends -->
+          
+          <!-- Form starts -->
+          <form class="form-horizontal" >
+            <!-- Row starts -->
+            <div class="row"> 
+             
+             <!-- Form elements starts -->
+              <div class="form-group">
+                 <label for="projName" class="col-md-4  col-sm-2 control-label">Name</label>
+                 <div class="col-sm-6">
+                  <input type="text" class="form-control" id="projName" ng-model="updatingProject.projectname">
+                 </div>
+              </div>
+
+              <div class="form-group">
+               <label for="customer" class="col-md-4  col-sm-2 control-label">Customer</label>
+               <div class="col-sm-6">
+                 {{updatingProject.customername}}
+               </div>
+              </div>
+
+              <div class="form-group">
+               <label for="projType" class="col-md-4  col-sm-2 control-label">Project Type</label>
+               <div class="col-sm-6">
+                 <input type="text" class="form-control" id="projType" ng-model="updatingProject.project_type">
+               </div>
+              </div>
+
+              <div class="form-group">
+               <label for="pocs" class="col-md-4  col-sm-2 control-label">Poc(s) attended</label>
+               <div class="col-sm-6">
+                 <input type="text" class="form-control" id="pocs" ng-model="updatingProject.poc_attended">
+               </div>
+              </div>
+
+              <div class="form-group">
+                 <label for="auditor" class="col-md-4  col-sm-2 control-label">Auditor</label>
+                 <div class="col-sm-6">
+                   <input type="text" class="form-control" id="auditor" ng-model="updatingProject.auditor">
+                 </div>
+              </div>
+
+               <div class="form-group">
+                 <label for="status" class="col-md-4  col-sm-2 control-label">Status</label>
+                 <div class="col-sm-6">
+                    <select id="status" class="form-control" ng-model="updatingProject.status">
+                       <option value="To be scheduled">To be Scheduled</option>
+                       <option value="Started">Started</option>
+                       <option value="Working">Working</option>
+                       <option value="Completed">Completed</option>
+                    </select>
+                 </div>
+               </div>
+
+              <div class="form-group">
+               <label for="technology" class="col-md-4  col-sm-2 control-label">Technology & Tools</label>
+               <div class="col-sm-6">
+                 <select id="technology" class="form-control" multiple ng-model="updatingProject.technologystack">
+                   <option ng-repeat="tech in technologyList" value="{{tech.name}}">{{tech.name}}</option>
+                 </select>
+               </div>
+              </div>
+
+              <div class="form-group">
+                   <label for="description" class="col-md-4  col-sm-2 control-label">Description</label>
+                   <div class="col-sm-7">
+                     <textarea class="form-control" id="description" ng-model="updatingProject.projectDescription"></textarea>
+                   </div>
+              </div>
+
+              <div class="form-group">
+                 <label for="delivery" class="col-md-4  col-sm-2 control-label">Project delivery methodology</label>
+                 <div class="col-sm-7">
+                    <textarea class="form-control" id="delivery" ng-model="updatingProject.projectDeliveryMethodology"></textarea>
+                 </div>
+              </div>
+
+             <div class="form-group">
+                   <label for="statusupdates" class="col-md-4  col-sm-2 control-label">Status updates and meeting schedules</label>
+                   <div class="col-sm-7">
+                      <textarea class="form-control" id="statusupdates" ng-model="updatingProject.status_updates"></textarea>
+                   </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-md-4"></div>
+                <div class="col-sm-8">
+                  <button  class="btn btn-primary pull-left" ng-click="updateProject(updatingProject)">Update Project</button>
+                  <button  class="btn btn-default ">Cancel</button>
+                </div>
+              </div>
+              <!-- form elements ends -->
+            </div>
+            <!-- Row ends -->
+          </form>
+          <!-- Form ends -->
+      </div>
+      <!-- Page main content ends -->
+  </section>
+<!-- Main container ends
